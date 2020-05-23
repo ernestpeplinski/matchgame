@@ -18,22 +18,45 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
         
     var firstFlippedCardIndex : IndexPath?
+    
+    
     var timer : Timer?
+    @IBOutlet weak var timerLabel: UILabel!
     var milliseconds: Float = 30 * 1000 // 30 sec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardArray = model.getCard()
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        cardArray = model.getCard()
-    }
+                timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-
+    
+    //Mark : Timer Mathods
+    @objc func timerElapsed(){
+        
+        milliseconds -= 1
+        
+       let seconds = String(format:"%.2f", milliseconds/1000)
+      
+        timerLabel.text = "time Remaining: \(seconds)"
+        
+        if milliseconds <= 0 {
+            
+            timer?.invalidate()
+            timerLabel.textColor = UIColor.red
+            
+            checkGameEnded()
+        }
+        
+        
+    }
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
            
@@ -100,7 +123,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
              cardOneCell?.remove()
              cardTwoCell?.remove()
              
-             ckeckGameEnded()
+             checkGameEnded()
              
              }
              else {
@@ -118,7 +141,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
              firstFlippedCardIndex = nil
          }
-         func ckeckGameEnded() {
+         func checkGameEnded() {
              
              var isWon = true
              
