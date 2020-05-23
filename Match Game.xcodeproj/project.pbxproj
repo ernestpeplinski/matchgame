@@ -15,6 +15,7 @@
 		3F43D1EE24798E71002CE314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F43D1ED24798E71002CE314 /* Assets.xcassets */; };
 		3F43D1F124798E71002CE314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F43D1EF24798E71002CE314 /* LaunchScreen.storyboard */; };
 		3F43D1F924799F8D002CE314 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43D1F824799F8D002CE314 /* Card.swift */; };
+		3F43D1FB2479A051002CE314 /* CardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43D1FA2479A051002CE314 /* CardModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3F43D1F024798E71002CE314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F43D1F224798E71002CE314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F43D1F824799F8D002CE314 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = "../../MatchGame-master/MatchGame/Card.swift"; sourceTree = "<group>"; };
+		3F43D1FA2479A051002CE314 /* CardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		3F43D1E024798E6F002CE314 /* Match Game */ = {
 			isa = PBXGroup;
 			children = (
+				3F43D1FA2479A051002CE314 /* CardModule.swift */,
 				3F43D1F824799F8D002CE314 /* Card.swift */,
 				3F43D1E124798E6F002CE314 /* AppDelegate.swift */,
 				3F43D1E324798E6F002CE314 /* SceneDelegate.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F43D1E624798E6F002CE314 /* ViewController.swift in Sources */,
+				3F43D1FB2479A051002CE314 /* CardModule.swift in Sources */,
 				3F43D1EC24798E6F002CE314 /* Match_Game.xcdatamodeld in Sources */,
 				3F43D1F924799F8D002CE314 /* Card.swift in Sources */,
 				3F43D1E224798E6F002CE314 /* AppDelegate.swift in Sources */,
