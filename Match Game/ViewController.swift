@@ -129,20 +129,41 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                      break
                  }
              }
-
+            var title = ""
+            var message = ""
+            
              if isWon == true {
                  
                  if milliseconds > 0{
                      timer?.invalidate()
                  }
-
-                 
+                title = "Congrarulations!"
+                message  = "You`ve Won"
              } else {
                  if milliseconds > 0 {
                      return
                  }
-             }
-         }
+                
+                title = "Game Over"
+                message = "You`ve Lost"
+                
+            }
+            
+                    showAlert(title, message)
+            
+    }
+    
+        func showAlert(_ title : String, _ message : String){
+        //Show won/lost messaging
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
 
+        
+    }
 }
 
