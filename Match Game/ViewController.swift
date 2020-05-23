@@ -53,8 +53,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
        }
        
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         
-           
+         let cell =  collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
+
+             cell.flip()
+
        } //Engding of didSelectItem method.
 }
 
