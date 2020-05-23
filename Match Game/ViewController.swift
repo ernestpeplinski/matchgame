@@ -54,9 +54,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
        
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let cell =  collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
-
-             cell.flip()
-
-       } //Engding of didSelectItem method.
+        let card = cardArray[indexPath.row]
+        if card.isFliped == false {
+            cell.flip()
+            card.isFliped = true
+         }else{
+            cell.flipBack()
+            card.isFliped = false
+            
+        }
+        } //Engding of didSelectItem method.
 }
 
